@@ -1,0 +1,24 @@
+[package]
+name = "ssh-done"
+version = "0.1.0"
+edition = "2021"
+description = "Desktop notification when remote SSH commands finish — tiny local daemon, no cloud dependency."
+license = "MIT"
+repository = "https://github.com/fuleinist/ssh-done"
+readme = "README.md"
+keywords = ["ssh", "notification", "terminal", "productivity", "daemon"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+ctrlc = "3"
+dirs = "6"
+notify-rust = "4"
+serde = { version = "1", features = ["derive"] }
+sysinfo = "0.36"
+toml = "0.8"
+
+[profile.release]
+strip = true
+lto = true
